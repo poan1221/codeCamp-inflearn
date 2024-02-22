@@ -2,7 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 
 const FETCH_BOARD = gql`
   query {
-    fetchBoard(number: 1) {
+    fetchBoard(number: 4) {
       number
       writer
       title
@@ -19,7 +19,7 @@ export default function StaticRoutingMovedPage() {
   return (
     <div>
       <div>1번 게시글 이용이 완료!</div>
-      {/* null 이라 안나옴.. 확인 필요 <div>작성자 : {data && data.fetchBorad.writer}</div> */}
+      <div>작성자 : {data?.fetchBoard.writer}</div>
     </div>
   );
 }
